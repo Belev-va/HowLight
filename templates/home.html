@@ -7,6 +7,7 @@
       <h2><a href="#">{{ post.title }}</a></h2>
       <span> Автор: <b>{{ post.author }}</b></span>
       <p>{{ post.body }}</p>
+      <img src="{{ post.img.url }}" />
     </div>
   {% endfor %}
 {% endblock content %}

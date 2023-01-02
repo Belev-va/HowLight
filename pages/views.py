@@ -4,9 +4,9 @@ from django.shortcuts import render
 # pages/views.py
 from django.views.generic import ListView
  
-from .models import Post
+from .models import Project
  
  
 class PagesListView(ListView):
-    model = Post
+    model = Project
     template_name = 'home.html'

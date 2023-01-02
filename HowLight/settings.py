@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'pages.apps.PagesConfig',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -77,8 +79,12 @@ WSGI_APPLICATION = 'HowLight.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'HowHigh23',
+        'HOST': '23.111.202.142',
+        'PORT': '5432',
     }
 }
 
@@ -123,6 +129,9 @@ STATICFILES_DIRS = [
     BASE_DIR / "assets",
     #'/var/www/assets/',
 ]
+
+MEDIA_ROOT = f'{BASE_DIR}/media'
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
