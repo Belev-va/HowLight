@@ -4,3 +4,4 @@ django-extensions==3.2.1
 django-ckeditor==6.5.1
 sorl-thumbnail==12.9.0
 Pillow==9.3.0
+python-dotenv==0.21.0
