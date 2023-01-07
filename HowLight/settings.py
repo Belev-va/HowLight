@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'ckeditor',
     'ckeditor_uploader',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [

@@ -5,9 +5,9 @@
     <section>
     <div class="container">
         <h2>{{ project.title }}</h2>
-        <img src="{{ project.img.url }}" />
+        <img src="{{ project.img.url }}" style="max-width: 300px;">
         <span> Автор: <b>{{ project.author }}</b></span>
-        <p>{{ project.body }}</p>
+        <p>{{ project.content|safe }}</p>
         <p>{{ project.date }}</p>
     </div>
     </section>
