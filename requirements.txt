@@ -1,4 +1,4 @@
 Django==4.1.4
 psycopg2-binary==2.9.5
-django-extensions
-Pillow
+django-extensions==9.3.0
+Pillow==3.2.1
