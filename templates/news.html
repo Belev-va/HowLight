@@ -9,7 +9,7 @@
             <div class="col-3">
             <h2><a href="{% url 'news-detail' news.id %}">{{ news.title }}</a></h2>
             <span> Автор: <b>{{ news.author }}</b></span>
-            <p>{{ news.body }}</p>
+            <p>{{ news.descr }}</p>
             {% if news.img.url %}
                 <img src="{{ news.img.url }}" />
             {% endif %}

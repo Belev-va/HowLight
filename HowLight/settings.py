@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'news.apps.NewsConfig',
     'django_extensions',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -127,8 +129,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquer.min.js'
 
-STATIC_URL = 'assets/'
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+STATIC_URL = '/assets/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "assets",
