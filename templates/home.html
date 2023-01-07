@@ -2,12 +2,18 @@
 {% extends 'base.html' %}
  
 {% block content %}
-  {% for post in object_list %}
-    <div class="post-entry">
-      <h2><a href="#">{{ post.title }}</a></h2>
-      <span> Автор: <b>{{ post.author }}</b></span>
-      <p>{{ post.body }}</p>
-      <img src="{{ post.img.url }}" />
+  <section>
+    <div class="container">
+      <div class="d-flex flex-wrap">
+        {% for post in object_list %}
+          <div class="col-3">
+            <h2><a href="{% url 'project-detail' post.id %}">{{ post.title }}</a></h2>
+            <span> Автор: <b>{{ post.author }}</b></span>
+            <p>{{ post.body }}</p>
+            <img src="{{ post.img.url }}" />
+          </div>
+        {% endfor %}
+      </div>
     </div>
-  {% endfor %}
+  </section>
 {% endblock content %}

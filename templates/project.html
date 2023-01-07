@@ -1,0 +1,14 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+ 
+{% block content %}
+    <section>
+    <div class="container">
+        <h2>{{ project.title }}</h2>
+        <img src="{{ project.img.url }}" />
+        <span> Автор: <b>{{ project.author }}</b></span>
+        <p>{{ project.body }}</p>
+        <p>{{ project.date }}</p>
+    </div>
+    </section>
+{% endblock content %}
