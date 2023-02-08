@@ -7,4 +7,5 @@ Pillow==9.3.0
 python-dotenv==0.21.0
 pytz
 tzdata
-boto3==0.0.1
+boto3==1.4.4
+django-storages
