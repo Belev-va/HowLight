@@ -46,14 +46,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'storages'
-
     'pages.apps.PagesConfig',
     'news.apps.NewsConfig',
     'django_extensions',
     'ckeditor',
     'ckeditor_uploader',
     'sorl.thumbnail',
+    'storages',
 
 ]
 
