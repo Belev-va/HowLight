@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'sorl.thumbnail',
+    'storages',
+
 ]
 
 MIDDLEWARE = [
@@ -95,6 +97,17 @@ DATABASES = {
         'PORT': os.environ.get("SQL_PORT", "5432"),
     }
 }
+#AWS S3 settings
+
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = 'how-light-prod-media-bucket'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_DEFAULT_ACL = 'public-read'
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+    }
 
 
 # Password validation
@@ -130,11 +143,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquer.min.js'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
-STATIC_URL = '/assets/'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/assets/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "assets",
@@ -142,7 +161,7 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_ROOT = f'{BASE_DIR}/media'
-MEDIA_URL = '/media/'
+MEDIA_URL =  f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
