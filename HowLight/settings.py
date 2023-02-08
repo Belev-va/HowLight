@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import boto3
 from dotenv import load_dotenv
 dotenv_path = os.path.join('.env.dev')
 if os.path.exists(dotenv_path):
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'storages'
 
     'pages.apps.PagesConfig',
     'news.apps.NewsConfig',
