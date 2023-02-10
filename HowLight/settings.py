@@ -17,7 +17,15 @@ dotenv_path = os.path.join('.env.dev')
 if os.path.exists(dotenv_path):
     load_dotenv(dotenv_path)
 
+from storages.backends.s3boto3 import S3Boto3Storage,S3StaticStorage
 
+class MediaStorage(S3Boto3Storage):
+    location = 'media'
+    file_overwrite = False
+
+class StaticStorage(S3StaticStorage):
+    location = 'assets'
+    file_overwrite = True
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -153,9 +161,9 @@ CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquer.
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'HowLight.settings.MediaStorage'
 
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+STATICFILES_STORAGE = 'HowLight.settings.StaticStorage'
 
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/assets/'
 
@@ -164,7 +172,7 @@ STATICFILES_DIRS = [
     #'/var/www/assets/',
 ]
 
-MEDIA_ROOT = f'{BASE_DIR}/media'
+MEDIA_ROOT = f'{BASE_DIR}/media/'
 MEDIA_URL =  f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
 # Default primary key field type
