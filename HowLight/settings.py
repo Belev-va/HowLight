@@ -136,12 +136,7 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 STATIC_URL = '/assets/'
 
-if DEBUG:
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'assets')
-    ]
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 #STATICFILES_DIRS = [
 #    BASE_DIR / "assets",
