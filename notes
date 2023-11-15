@@ -1,0 +1,4 @@
+python manage.py migrate
+Operations to perform:
+Apply all migrations: admin, auth, contenttypes, news, pages, sessions, thumbnail
+

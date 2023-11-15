@@ -136,12 +136,12 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 STATIC_URL = '/assets/'
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
-STATICFILES_DIRS = [
-    BASE_DIR / "assets",
+#STATICFILES_DIRS = [
+    #BASE_DIR / "assets",
     #'/var/www/assets/',
-]
+#]
 
 MEDIA_ROOT = f'{BASE_DIR}/media'
 MEDIA_URL = '/media/'
