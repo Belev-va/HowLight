@@ -2,3 +2,8 @@ python manage.py migrate
 Operations to perform:
 Apply all migrations: admin, auth, contenttypes, news, pages, sessions, thumbnail
  python manage.py collectstatic --noinput
+
+1660387749-how_41rSAsS.jpg
+/1660387749-how_41rSAsS.jpg
+1b1bc740d02c79b5b5672fa40ac619fd_fzhzaWE.jpg
+unnamed_75ylv73.jpg
