@@ -8,7 +8,7 @@
         {% for post in object_list %}
           <div class="col-3">
             <h2><a href="{% url 'project-detail' post.id %}">{{ post.title }}</a></h2>
-            <span> Автор: <b>{{ post.author }}</b></span>
+            <span> Author: <b>{{ post.author }}</b></span>
             <p>{{ post.descr }}</p>
             <img src="{{ post.img.url }}" />
           </div>
