@@ -11,7 +11,7 @@ class Article(models.Model):
     author = models.ForeignKey(
         'auth.User',
         on_delete=models.CASCADE,
-        verbose_name='Автор'
+        verbose_name='Author'
     )
 
     descr = models.TextField(verbose_name='Описание')

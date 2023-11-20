@@ -10,7 +10,7 @@ class Project(models.Model):
     author = models.ForeignKey(
         'auth.User',
         on_delete=models.CASCADE,
-        verbose_name='Автор'
+        verbose_name='Author'
     )
     descr = models.TextField(verbose_name='Описание')
     content = RichTextField(null=True, blank=True, verbose_name='Контент')
